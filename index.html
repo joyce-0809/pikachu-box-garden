@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>皮卡丘的寶貝球大冒險 · 推箱子</title>
+<style>
+:root{--ink:#244b42;--muted:#73877b;--green:#356e54;--cream:#faf8ee;--line:#dce5d5}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Microsoft JhengHei",system-ui,sans-serif;background-image:radial-gradient(#acbfa644 .8px,transparent .8px);background-size:18px 18px}button{font:inherit;cursor:pointer;touch-action:manipulation;color:inherit;border:1px solid var(--line);border-radius:14px;background:#fffdf5;transition:transform .12s,background .12s}button:hover{background:#eaf0de}button:active{transform:translateY(2px)}button:focus-visible{outline:3px solid #edab42;outline-offset:3px}button:disabled{opacity:.4;cursor:default}header{max-width:1180px;margin:auto;padding:26px 32px;display:flex;justify-content:space-between;align-items:center}.brand{font-weight:800;font-size:20px;letter-spacing:1px}.brand span{display:inline-grid;place-items:center;background:var(--green);color:white;width:34px;height:34px;border-radius:11px;margin-right:10px}.edition{font-size:11px;letter-spacing:3px;color:var(--muted)}main{max-width:1120px;margin:12px auto 30px;padding:0 24px;display:grid;grid-template-columns:290px 1fr;gap:38px}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--green);font-weight:bold}h1{font-size:44px;line-height:1.25;margin:16px 0}.intro{font-size:14px;line-height:1.9;color:#657e70}.levels{display:grid;gap:10px;margin:26px 0}.level{padding:15px;display:flex;align-items:center;gap:13px;text-align:left}.level .num{font-size:22px;color:#a2b597;font-weight:bold}.level strong{display:block;font-size:15px}.level small{font-size:11px;color:#798875}.level.active{background:var(--green);color:white;border-color:var(--green);box-shadow:0 7px 16px #356e541c}.level.active small,.level.active .num{color:#d7e6c7}.badge{margin-left:auto;font-size:18px}.rules{border-top:1px solid var(--line);padding-top:18px;font-size:12px;line-height:1.95;color:#637b6c}.rules b{color:var(--ink)}.play-area{min-width:0}.topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.topline h2{font-size:19px;margin:0}.stats{display:flex;gap:18px}.stat{font-size:10px;color:var(--muted);text-align:center}.stat b{display:block;font-size:23px;line-height:1.3;color:var(--ink);font-variant-numeric:tabular-nums}.board-wrap{position:relative;padding:14px;border-radius:28px;background:#e4ebd8;box-shadow:0 14px 0 #d2dcc5,0 22px 35px #34513312;border:1px solid #d6e0cc}canvas{display:block;width:100%;height:auto;aspect-ratio:1;max-height:510px;border-radius:18px;touch-action:none}.message{min-height:40px;margin:26px 0 10px;text-align:center;font-size:13px;color:#627563}.toolbar{display:flex;gap:10px;justify-content:center}.toolbar button{padding:10px 16px;font-size:13px}.dpad{display:grid;grid-template-columns:repeat(3,48px);grid-template-rows:repeat(2,43px);gap:5px;justify-content:center;margin:18px auto 0}.dpad button{font-size:23px;background:#f1f3e7;box-shadow:0 3px 0 #d8e0cc}.dpad button:first-child{grid-column:2}.dpad button:nth-child(2){grid-column:1;grid-row:2}.dpad button:nth-child(3){grid-column:2;grid-row:2}.dpad button:nth-child(4){grid-column:3;grid-row:2}.footer{text-align:center;font-size:11px;color:#84927e;margin-top:14px}.win{position:absolute;inset:14px;border-radius:18px;background:#f8fbefdF;backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}.win[hidden]{display:none}.win .flower{font-size:54px}.win h3{font-size:30px;margin:10px}.win p{font-size:14px;line-height:1.8}.win button{background:var(--green);color:white;padding:13px 25px;border:0}.win button.secondary{background:#e6eddc;color:var(--ink);margin:8px}.spark{color:#d39538}.legend{display:flex;gap:16px;justify-content:center;font-size:11px;color:#738470;margin:16px 0 0}.legend i{display:inline-block;width:10px;height:10px;background:#e6a95f;border-radius:2px;margin-right:5px}.legend .goal{background:#faf0b8;border:2px solid #c89547;border-radius:50%}
+@media(min-width:900px){.dpad{grid-template-columns:repeat(3,42px);grid-template-rows:repeat(2,34px);margin-top:12px}canvas{aspect-ratio:1.15}}
+@media(max-width:760px){header{padding:16px 18px}.edition{letter-spacing:1px;font-size:9px}main{display:block;padding:0 16px;margin-top:8px}.eyebrow,.intro,.rules{display:none}h1{font-size:25px;margin:0 0 12px}h1 br{display:none}.levels{display:flex;gap:7px;margin:0 0 20px}.level{flex:1;padding:10px 7px;gap:7px;border-radius:12px}.level .num{font-size:15px}.level strong{font-size:12px}.level small{font-size:9px}.badge{display:none}.topline h2{font-size:16px}.stat b{font-size:20px}.stats{gap:12px}.board-wrap{padding:9px;border-radius:20px}canvas{max-height:46vh}.message{margin-top:22px;font-size:12px;min-height:30px}.toolbar button{padding:9px 14px}.dpad{margin-top:12px}.footer{margin-bottom:env(safe-area-inset-bottom,10px)}.win{inset:9px}.win h3{font-size:24px}.win .flower{font-size:36px}.win p{margin:8px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.random-button{width:100%;min-height:46px;margin:0 0 20px;background:#eaf0de;border-color:#9eb692;font-weight:bold}.levels{margin-bottom:12px}
+@media(max-width:760px){.levels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:10px}.random-button{margin-bottom:16px}.level{min-height:48px}}
+
+/* Pikachu meadow edition */
+:root{--ink:#4c392b;--muted:#927653;--green:#dcae25;--cream:#fff9e8;--line:#f0d98e}
+body{background-color:#fff9e8;background-image:radial-gradient(#f2cc5540 1px,transparent 1px),linear-gradient(135deg,#fffaf0,#f2fbdf);background-size:22px 22px,100% 100%}
+header .brand span{background:#ffd83d;color:#553b20;border-radius:50%;box-shadow:0 3px 0 #dcae25}
+.edition{color:#b78723}
+.eyebrow{color:#b78723}
+.level{background:#fffdf5;border-color:#f0d98e}
+.level:hover{background:#fff1b9}
+.level.active{background:#f2c532;border-color:#dfa91f;color:#4d351f;box-shadow:0 7px 16px #b5832030}
+.level.active small,.level.active .num{color:#795921}
+.random-button{background:#fff0a8;border-color:#e8c246;color:#62461e}
+.random-button:hover{background:#ffe276}
+.board-wrap{background:linear-gradient(145deg,#d7f2ff,#dff2ba);border-color:#c4e3a3;box-shadow:0 14px 0 #bbdc9e,0 22px 35px #466c3218}
+button{border-color:#efd98c;background:#fffdf4}
+button:hover{background:#fff0b9}
+.dpad button{background:#fff1b8;box-shadow:0 3px 0 #e4c768}
+.win{background:#fff9e9e8}
+.win .flower{filter:drop-shadow(0 3px 0 #efd260)}
+.win button{background:#f2c532;color:#49351e}
+.win button:hover{background:#ffdc53}
+.win button.secondary{background:#fff0b9;color:#49351e}
+.legend{color:#80633c}
+.legend i{background:#e84a45;border-radius:50%;border:1px solid #39444b}
+.legend .goal{background:#ffe47a;border-color:#d69c25;border-radius:50%}
+.message{color:#80633c}
+button:focus-visible{outline-color:#f0a72f}
+</style></head><body>
+<header><div class="brand"><span>⚡</span>皮卡丘的寶貝球大冒險</div><div class="edition">PIKACHU · PUZZLE MEADOW</div></header>
+<main><aside><div class="eyebrow">PUSH · THINK · CATCH!</div><h1>皮卡丘，<br>出發吧！</h1><p class="intro">把散落的寶貝球推到閃亮標記，<br>和皮卡丘一起探索草地。</p><nav class="levels" aria-label="選擇關卡"></nav><button class="random-button" id="random">⚡ 換一張冒險地圖</button><div class="rules"><b>冒險小規則</b><br>① 把每顆寶貝球推到星光標記。<br>② 一次只能推一顆，不能拉回。<br>③ 卡住了？復原一步，再試一次。<br><br><b>鍵盤</b>　方向鍵 / WASD<br><b>快捷鍵</b>　Z 復原 · R 重來<br><b>手機</b>　下方方向按鈕 / 棋盤滑動</div></aside>
+<section class="play-area"><div class="topline"><h2 id="level-title"></h2><div class="stats"><div class="stat">步數<b id="moves">0</b></div><div class="stat">已收集<b id="goals">0 / 1</b></div></div></div><div class="board-wrap"><canvas id="board" width="720" height="720" role="img" aria-label="寶貝球推箱子棋盤：使用方向鍵或下方按鈕操作"></canvas><div class="win" id="win" hidden><div><div class="flower">⚡</div><div class="eyebrow">NICE CATCH!</div><h3 id="win-title">皮卡丘，做得好！</h3><p id="win-copy"></p><button id="next">下一張冒險地圖 →</button><br><button class="secondary" id="replay">再挑戰一次</button></div></div></div><div class="legend"><span><i></i>寶貝球</span><span><i class="goal"></i>星光標記</span><span>⚡ 皮卡丘</span></div><div class="message" id="message" role="status" aria-live="polite"></div><div class="toolbar"><button id="undo">↶ 復原一步</button><button id="restart">↻ 重新開始</button><button id="hint">✧ 冒險提示</button></div><div class="dpad" aria-label="移動方向"><button data-dir="U" aria-label="向上">↑</button><button data-dir="L" aria-label="向左">←</button><button data-dir="D" aria-label="向下">↓</button><button data-dir="R" aria-label="向右">→</button></div><div class="footer">不趕時間，和皮卡丘慢慢冒險。<span id="best"></span></div></section></main>
+<script id="model">
+const LEVELS=[
+{name:'皮卡丘的第一顆球',sub:'01 · 草地冒險',hint:'走到寶貝球左邊，把它推到星光標記。',map:['#######','#     #','#     #','# @$ .#','#     #','#     #','#######']},
+{name:'兩顆球的默契',sub:'02 · 電光合作',hint:'兩個星光標記都在上方，試著從寶貝球下方往上推。',map:['#######','# . . #','#     #','# $ $ #','#  @  #','#     #','#######']},
+{name:'常磐草地小迷宮',sub:'03 · 想好再出發',hint:'先把右邊的寶貝球往上送，再繞到左球下方。小心別卡進角落。',map:['########','#  . . #','#  #   #','# $  $ #','#   #  #','#  @   #','#      #','########']}
+];
+const DIR={U:[0,-1],D:[0,1],L:[-1,0],R:[1,0]};
+function createState(level){const walls=[],goals=[],boxes=[];let player;level.map.forEach((row,y)=>[...row].forEach((c,x)=>{const p=y*row.length+x;if(c==='#')walls.push(p);if('.+*'.includes(c))goals.push(p);if('$*'.includes(c))boxes.push(p);if('@+'.includes(c))player=p}));return {width:level.map[0].length,height:level.map.length,walls,goals,boxes,player,moves:0};}
+function won(s){return s.boxes.every(p=>s.goals.includes(p));}
+function advance(s,dir){if(won(s))return null;const [dx,dy]=DIR[dir],x=s.player%s.width,y=Math.floor(s.player/s.width),nx=x+dx,ny=y+dy;if(nx<0||nx>=s.width||ny<0||ny>=s.height)return null;const n=ny*s.width+nx;if(s.walls.includes(n))return null;const boxes=[...s.boxes];if(boxes.includes(n)){const bx=nx+dx,by=ny+dy,b=by*s.width+bx;if(bx<0||bx>=s.width||by<0||by>=s.height||s.walls.includes(b)||boxes.includes(b))return null;boxes[boxes.indexOf(n)]=b;}return {...s,player:n,boxes,moves:s.moves+1};}
+
+// Start solved and pull boxes backwards. Reversing the recorded moves is a legal solution.
+function generateLevel(seed){
+ seed=seed>>>0;let rng=seed;
+ const random=()=>{rng+=0x6D2B79F5;let t=rng;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296};
+ const pick=a=>a[Math.floor(random()*a.length)], opposite={U:'D',D:'U',L:'R',R:'L'};
+ for(let attempt=0;attempt<80;attempt++){
+  const width=8,walls=new Set(),floor=[];
+  for(let p=0;p<64;p++){const x=p%8,y=Math.floor(p/8);if(!x||x===7||!y||y===7)walls.add(p);else floor.push(p)}
+  // Interior obstacles vary the routes; reject disconnected layouts.
+  for(let n=0;n<4;n++)walls.add(pick(floor));
+  const free=floor.filter(p=>!walls.has(p)),seen=new Set([free[0]]),queue=[free[0]];
+  for(const p of queue)for(const d of [-8,8,-1,1])if(!walls.has(p+d)&&!seen.has(p+d)){seen.add(p+d);queue.push(p+d)}
+  if(seen.size!==free.length)continue;
+  const candidates=free.filter(p=>p%8>1&&p%8<6&&p>15&&p<48);
+  if(candidates.length<3)continue;
+  const goals=[];while(goals.length<3){const p=pick(candidates);if(!goals.includes(p))goals.push(p)}
+  const boxes=[...goals];let player=pick(free.filter(p=>!boxes.includes(p))),pulls=0;const trace=[];
+  for(let step=0;step<1200;step++){
+   const moves=Object.keys(DIR).filter(d=>{const [x,y]=DIR[d],n=player+x+y*width;return !walls.has(n)&&!boxes.includes(n)});
+   if(!moves.length)break;
+   const pulling=moves.filter(d=>{const [x,y]=DIR[d];return boxes.includes(player-x-y*width)});
+   const d=pick(pulling.length&&random()<0.8?pulling:moves),[dx,dy]=DIR[d],delta=dx+dy*width,b=boxes.indexOf(player-delta);
+   if(b>=0){boxes[b]=player;pulls++}player+=delta;trace.push(opposite[d]);
+  }
+  if(pulls<12||boxes.some(p=>goals.includes(p)))continue;
+  const map=Array.from({length:8},(_,y)=>Array.from({length:8},(_,x)=>{const p=y*8+x;return walls.has(p)?'#':p===player?(goals.includes(p)?'+':'@'):boxes.includes(p)?(goals.includes(p)?'*':'$'):goals.includes(p)?'.':' '}).join(''));
+  return {name:'新的草地冒險',sub:'隨機 · 三球挑戰',hint:`冒險編號 ${seed} · 三顆寶貝球都有路可到達星光標記，先觀察再推。`,seed,map,solution:trace.reverse()};
+ }
+ // Bounded fallback: three boxes each one push below their goals, always solvable.
+ return {name:'新的草地冒險',sub:'隨機 · 三球挑戰',seed,hint:`冒險編號 ${seed} · 從寶貝球下方往上推。`,map:['########','# . . .#','# $ $ $#','# @    #','#      #','#      #','#      #','########'],solution:['U','D','R','R','U','D','R','R','U']};
+}
+</script>
+<script>function rounded(x,y,w,h,r,fill){ctx.fillStyle=fill;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();}
+function pikaPath(points,fill,stroke='#9c6b13',width=2){ctx.beginPath();ctx.moveTo(points[0][0],points[0][1]);for(let i=1;i<points.length;i++)ctx.lineTo(points[i][0],points[i][1]);ctx.closePath();ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.lineWidth=width;ctx.strokeStyle=stroke;ctx.stroke();}}
+function drawPokeball(cx,cy,r,placed=false){
+  ctx.save();ctx.shadowColor=placed?'#b43a36':'#8e4b20';ctx.shadowBlur=r*.18;ctx.shadowOffsetY=r*.12;
+  ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.clip();
+  const red=ctx.createLinearGradient(cx-r,cy-r,cx+r,cy+r);red.addColorStop(0,placed?'#ff625b':'#ff5b54');red.addColorStop(1,placed?'#d63138':'#d93337');ctx.fillStyle=red;ctx.fillRect(cx-r,cy-r,2*r,r);
+  const white=ctx.createLinearGradient(cx,cy,cx,cy+r);white.addColorStop(0,'#fffef2');white.addColorStop(1,'#e8edf0');ctx.fillStyle=white;ctx.fillRect(cx-r,cy,2*r,r);
+  ctx.shadowColor='transparent';ctx.fillStyle='#303841';ctx.fillRect(cx-r,cy-r*.105,2*r,r*.21);
+  ctx.beginPath();ctx.arc(cx,cy,r*.30,0,Math.PI*2);ctx.fillStyle='#303841';ctx.fill();
+  ctx.beginPath();ctx.arc(cx,cy,r*.205,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();
+  ctx.beginPath();ctx.arc(cx,cy,r*.125,0,Math.PI*2);ctx.fillStyle=placed?'#ffd85c':'#f8f7ee';ctx.fill();
+  ctx.restore();ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle='#26343b';ctx.lineWidth=Math.max(2,r*.1);ctx.stroke();
+  ctx.beginPath();ctx.ellipse(cx-r*.28,cy-r*.48,r*.23,r*.09,-.7,0,Math.PI*2);ctx.fillStyle='#ffffffa8';ctx.fill();
+}
+function drawPikachu(cx,cy,t){
+  const k=t/100;ctx.save();ctx.translate(cx,cy);ctx.scale(k,k);
+  ctx.fillStyle='#523b2b30';ctx.beginPath();ctx.ellipse(0,29,24,7,0,0,Math.PI*2);ctx.fill();
+  // Lightning tail behind the body
+  pikaPath([[17,14],[29,8],[25,-1],[41,-10],[31,-11],[40,-23],[22,-13],[27,-4],[13,3]],'#f4c532','#b78319',2.5);
+  // Ears and dark tips
+  pikaPath([[-17,-34],[-28,-70],[-13,-64],[-3,-41]],'#ffd83e','#b78319',2.5);
+  pikaPath([[12,-40],[28,-69],[31,-51],[24,-31]],'#ffd83e','#b78319',2.5);
+  pikaPath([[-27,-66],[-13,-62],[-8,-49]],'#3e3336',null);pikaPath([[27,-65],[31,-53],[25,-44]],'#3e3336',null);
+  // Body, face and cheeks
+  ctx.beginPath();ctx.ellipse(0,12,22,22,0,0,Math.PI*2);ctx.fillStyle='#ffdb43';ctx.fill();ctx.lineWidth=2.5;ctx.strokeStyle='#b78319';ctx.stroke();
+  ctx.beginPath();ctx.ellipse(0,-19,25,23,0,0,Math.PI*2);ctx.fillStyle='#ffe35a';ctx.fill();ctx.stroke();
+  ctx.fillStyle='#382d2a';for(const x of [-9,9]){ctx.beginPath();ctx.ellipse(x,-22,2.2,4,0,0,Math.PI*2);ctx.fill();}
+  ctx.fillStyle='#f36c56';for(const x of [-19,19]){ctx.beginPath();ctx.ellipse(x,-10,6,4.5,0,0,Math.PI*2);ctx.fill();}
+  ctx.beginPath();ctx.moveTo(-2,-12);ctx.quadraticCurveTo(0,-9,2,-12);ctx.strokeStyle='#8e5230';ctx.lineWidth=1.8;ctx.stroke();
+  // Tiny feet and arms
+  ctx.fillStyle='#f7c831';ctx.beginPath();ctx.ellipse(-12,30,9,4,0,0,Math.PI*2);ctx.ellipse(12,30,9,4,0,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(-23,10,5,9,-.5,0,Math.PI*2);ctx.ellipse(23,10,5,9,.5,0,Math.PI*2);ctx.fill();
+  ctx.restore();
+}
+function draw(){
+  const W=720,H=720;ctx.clearRect(0,0,W,H);const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#d9f4ff');bg.addColorStop(.45,'#e8f8d7');bg.addColorStop(1,'#c3e99d');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  // A soft sky meadow behind the board
+  for(let i=0;i<12;i++){const x=(i*83+35)%W,y=25+(i*47)%120;ctx.fillStyle=i%2?'#ffffff75':'#fff3a566';ctx.beginPath();ctx.arc(x,y,10+(i%3)*4,0,Math.PI*2);ctx.fill();}
+  const t=Math.min(680/state.width,680/state.height),ox=(W-state.width*t)/2,oy=(H-state.height*t)/2;
+  for(let y=0;y<state.height;y++)for(let x=0;x<state.width;x++){
+    const p=y*state.width+x,X=ox+x*t,Y=oy+y*t;
+    if(state.walls.includes(p)){
+      rounded(X+3,Y+8,t-6,t-10,Math.min(14,t*.2),'#65a963');rounded(X+4,Y+2,t-8,t-12,Math.min(14,t*.2),'#84c975');
+      for(const [dx,dy,r] of [[.25,.38,.15],[.52,.26,.19],[.73,.43,.16],[.44,.57,.15]]){ctx.beginPath();ctx.arc(X+t*dx,Y+t*dy,t*r,0,Math.PI*2);ctx.fillStyle=dy<.4?'#a0dc80':'#73bd6c';ctx.fill();}
+      ctx.fillStyle='#fff8';ctx.beginPath();ctx.arc(X+t*.3,Y+t*.2,Math.max(2,t*.035),0,Math.PI*2);ctx.fill();
+    }else{
+      rounded(X+2,Y+2,t-4,t-4,Math.min(10,t*.14),(x+y)%2?'#f2fbdc':'#fbffe8');
+      ctx.strokeStyle='#a7d48d55';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(X+t*.16,Y+t*.78);ctx.lineTo(X+t*.24,Y+t*.68);ctx.moveTo(X+t*.79,Y+t*.26);ctx.lineTo(X+t*.84,Y+t*.16);ctx.stroke();
+      if(state.goals.includes(p)){
+        ctx.save();ctx.translate(X+t/2,Y+t/2);ctx.rotate(Math.PI/4);rounded(-t*.25,-t*.25,t*.5,t*.5,t*.11,'#ffe47a');ctx.restore();
+        ctx.beginPath();ctx.arc(X+t/2,Y+t/2,t*.29,0,Math.PI*2);ctx.strokeStyle='#d69c25';ctx.lineWidth=Math.max(2,t*.035);ctx.stroke();
+        ctx.beginPath();ctx.arc(X+t/2,Y+t/2,t*.19,0,Math.PI*2);ctx.strokeStyle='#fff4b2';ctx.lineWidth=Math.max(2,t*.025);ctx.stroke();
+      }
+    }
+  }
+  state.boxes.forEach(p=>{const x=ox+p%state.width*t+t/2,y=oy+Math.floor(p/state.width)*t+t/2;drawPokeball(x,y,t*.34,state.goals.includes(p));});
+  const px=ox+state.player%state.width*t+t/2,py=oy+Math.floor(state.player/state.width)*t+t/2;drawPikachu(px,py,t);
+}
+
+
+let current=0,state,history=[],records={};try{records=JSON.parse(localStorage.getItem('box-garden-v1')||'{}')||{}}catch{}
+const $=id=>document.getElementById(id),canvas=$('board'),ctx=canvas.getContext('2d');
+function recordKey(i=current){return LEVELS[i].seed===undefined?i:'random-'+LEVELS[i].seed;}
+const seenMaps=new Set();let challengeNumber=0;
+function randomLevel(){
+ const a=new Uint32Array(1);
+ for(let attempt=0;attempt<100;attempt++){
+  crypto.getRandomValues(a);const level=generateLevel(a[0]),fingerprint=level.map.join('\n');
+  if(seenMaps.has(fingerprint))continue;
+  seenMaps.add(fingerprint);challengeNumber++;
+  level.name=`第 ${challengeNumber} 關 · 草地冒險`;level.sub='挑戰 · 每關不同';
+  LEVELS[3]=level;load(3);return;
+ }
+ $('message').textContent='暫時沒有新的冒險地圖，再按一次試試看。';
+}
+function nav(){document.querySelector('.levels').innerHTML=[3,0,1,2].filter(i=>LEVELS[i]).map(i=>{const l=LEVELS[i];return `<button class="level ${current===i?'active':''}" data-level="${i}" aria-current="${current===i?'step':'false'}"><span class="num">${i===3?'⚡':i+1}</span><span><strong>${i===3?'隨機冒險':'練習 '+(i+1)}</strong><small>${i===3?'第 '+challengeNumber+' 關':l.name}</small></span><span class="badge">${records[recordKey(i)]?'✓':'↗'}</span></button>`}).join('');document.querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>load(+b.dataset.level));}
+function render(){draw();$('moves').textContent=state.moves;$('goals').textContent=state.boxes.filter(p=>state.goals.includes(p)).length+' / '+state.goals.length;$('undo').disabled=!history.length;$('level-title').textContent=LEVELS[current].name;$('best').textContent=records[recordKey()]?' 最佳：'+records[recordKey()]+' 步':'';$('win').hidden=!won(state);nav();}
+function load(i){current=i;state=createState(LEVELS[i]);history=[];$('message').textContent=LEVELS[i].hint;render();}
+function move(d){const next=advance(state,d);if(!next){if(!won(state))$('message').textContent='前面走不通，換個方向試試看。';return;}history.push(state);state=next;$('message').textContent='把每顆寶貝球推到星光標記。';const trapped=state.boxes.some(p=>!state.goals.includes(p)&&(state.walls.includes(p-1)||state.walls.includes(p+1))&&(state.walls.includes(p-state.width)||state.walls.includes(p+state.width)));if(trapped)$('message').textContent='寶貝球卡在角落了！按「復原一步」就能救回來。';if(won(state)){records[recordKey()]=Math.min(records[recordKey()]||Infinity,state.moves);try{localStorage.setItem('box-garden-v1',JSON.stringify(records))}catch{}$('win-title').textContent=current===2?'草地冒險完成！':'皮卡丘，做得好！';$('win-copy').textContent=`用了 ${state.moves} 步，收集了 ${state.goals.length} 顆寶貝球。`;$('next').textContent='下一關 · 新的冒險地圖 →';$('message').textContent='太棒了！也可以復原一步，挑戰更短路線。';}render();}
+function undo(){if(history.length){state=history.pop();$('message').textContent='回到上一步，和皮卡丘再想想怎麼走。';render();}}
+$('undo').onclick=undo;$('restart').onclick=()=>load(current);$('replay').onclick=()=>load(current);$('random').onclick=randomLevel;$('next').onclick=randomLevel;$('hint').onclick=()=>{$('message').textContent=LEVELS[current].hint};document.querySelectorAll('[data-dir]').forEach(b=>b.onclick=()=>move(b.dataset.dir));
+addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;const d={ArrowUp:'U',ArrowDown:'D',ArrowLeft:'L',ArrowRight:'R',w:'U',s:'D',a:'L',d:'R'}[e.key]||{w:'U',s:'D',a:'L',d:'R'}[e.key.toLowerCase()];if(d){e.preventDefault();move(d)}else if(e.key.toLowerCase()==='z'){e.preventDefault();undo()}else if(e.key.toLowerCase()==='r'){e.preventDefault();load(current)}});
+let touchStart=null;canvas.addEventListener('pointerdown',e=>{touchStart={x:e.clientX,y:e.clientY,id:e.pointerId};canvas.setPointerCapture(e.pointerId)});canvas.addEventListener('pointerup',e=>{if(!touchStart||touchStart.id!==e.pointerId)return;const dx=e.clientX-touchStart.x,dy=e.clientY-touchStart.y;touchStart=null;if(Math.max(Math.abs(dx),Math.abs(dy))<18)return;move(Math.abs(dx)>Math.abs(dy)?dx>0?'R':'L':dy>0?'D':'U')});canvas.addEventListener('pointercancel',()=>touchStart=null);
+randomLevel();
+if(new URLSearchParams(location.search).has('qa'))window.gameQA={read:()=>JSON.parse(JSON.stringify(state)),load,move,undo,levels:LEVELS,generateLevel,randomLevel};
+</script></body></html>
+
